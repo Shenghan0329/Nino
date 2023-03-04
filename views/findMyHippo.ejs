@@ -1,0 +1,36 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+  <h1>Where's my hippo</h1>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-body">
+
+          <!-- Makes POST request to /login route -->
+          <form action="/findmyhippo" method="POST">
+            <div class="form-group">
+              <label for="email">My hippo's email</label>
+              <input type="email" class="form-control" name="username">
+            </div>
+            <button type="submit" class="btn btn-dark">Find my hippo :)</button>
+          </form>
+          <br>
+          <%if(notFound){%>
+            <h3>Your Hippo isn't in this pool, please invite him/her to play.</h3>
+            <br>
+          <%}%> 
+          <%if(waiting){%>
+            <h3>You've found your hippo, invite him/her to come and play with you :)</h3>
+            <br>
+          <%}%> 
+          <button onclick="location.href='/home'" class="btn btn-dark">Home</button> 
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<%- include('partials/footer') %>
