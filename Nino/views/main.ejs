@@ -1,0 +1,20 @@
+<%- include('partials/header') %>
+
+<div class="jumbotron text-center">
+  <div class="container">
+    <i style="font-size:6rem;" class="fa-solid fa-hippo"></i>
+    <h1 class="display-3">Hello <%=name%></h1>
+    <br>
+    <a class="btn btn-light btn-lg" href="/mydiary" role="button">My Diary</a>
+    <a class="btn btn-dark btn-lg" href="/ourdiary" role="button">Our Diary</a>
+      <% usersWithSecrets.forEach(function(user){ %>
+        <p class="secret-text"><%= user.secret %></p>
+      <% }); %>
+    <hr>
+    <br>
+    <a class="btn btn-light btn-lg" href="/logout" role="button">Log Out</a>
+    <a class="btn btn-dark btn-lg" href="/submit" role="button">Share your mood</a>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
