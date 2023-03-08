@@ -24,7 +24,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 mongoose.set("strictQuery", false);
-mongoose.connect("mongodb+srv://Shenghan:csh020329@cluster0.gmgtouw.mongodb.net/usersDB",{useNewUrlParser:true});
+mongoose.connect(process.env.DATABASE,{useNewUrlParser:true});
 
 app.set('view engine', 'ejs');
 
