@@ -15,6 +15,12 @@
               <input type="email" class="form-control" name="username">
             </div>
             <button type="submit" class="btn btn-dark">Find My Password</button>
+            <%if(veriCode){%>
+              <div class="form-group">
+                <label for="text">Verification Code</label>
+                <input type="text" class="form-control" name="veriCode">
+              </div>
+            <%}%>
           </form>
           <br>
           <h3><%=send%></h3>

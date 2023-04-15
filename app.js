@@ -10,6 +10,8 @@ const mongoose = require("mongoose");
 const session = require('express-session');
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
+const nodemailer = require("nodemailer");
+const crypto = require("crypto");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
@@ -198,7 +200,7 @@ app.get("/submit",function(req,res){
     }
 });
 app.get("/find",function(req,res){
-    res.render("find",{send:"",loginButton:false});
+    res.render("find",{send:"",loginButton:false,veriCode:false});
 });
 
 app.post("/register",function(req,res){
@@ -221,8 +223,7 @@ app.post("/login",function(req,res){
     const username = req.body.username;
     const password = req.body.password;
     const user = new User({
-        username:username,
-        passWord:password
+        username:username
     });
 
     req.login(user,function(err){
@@ -365,7 +366,15 @@ app.post("/ourdiary",function(req,res){
 });
 
 app.post("/find",function(req,res){
-    res.render("find",{send:"Your Verification Code has been sent through Email:)",loginButton:true});
+    let userName = req.body.username;
+    User.findOne({username:userName},function(err,user){
+        if(!user){
+            res.render("find",{send:"User Not Found",loginButton:false,veriCode:false});
+        }else{
+            res.render("find",{send:"Your Verification Code has been sent through Email:)",loginButton:false,veriCode:true});
+        }
+    });
+    
 });
 
 app.listen(3000,function(){
