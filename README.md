@@ -2,6 +2,8 @@
 
 Nino is a web application that enables couples to write a shared diary. It allows couples to write, share and reminisce about their memories together. 
 
+![Home Page Demo](./public/icon/readme_home.png)
+
 ## Features
 
 - Create an account and login
