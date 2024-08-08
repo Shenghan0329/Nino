@@ -1,7 +1,8 @@
 
 body {
   color:#f72585;
-  background-color: #fffffc;
+  /* background-color: #fffffc; */
+  background-color: #e9ecef;
 }
 h2{
   margin-bottom:0rem;
@@ -12,17 +13,6 @@ h2{
     text-align: center;
 }
 
-.secret-text {
-  text-align: center;
-  font-size: 2rem;
-  color: #8e9aaf;
-  border: 1px double black;
-  border-radius:10%;
-  width: -moz-fit-content;
-  width: fit-content;
-  max-width:60%;
-  margin:10px auto;
-}
 h3.secret-text{
   border:0px;
 }
@@ -37,13 +27,6 @@ p.secret-text{
   margin:20px auto;
 }
 
-textarea{
-  height:400px;
-  width:50%;
-  border-radius:8%;
-  padding:3%;
-}
-
 button,.btn-lg{
   margin:15px;
   color:#ffffff;
@@ -52,4 +35,40 @@ button,.btn-lg{
 .btn-lg:hover{
   background-color:#f72585;
   color:#fffffc;
+}
+
+textarea{
+  min-height:200px;
+  border-radius:8%;
+  padding:3%;
+}
+.secret-text {
+  text-align: center;
+  font-size: 2rem;
+  color: #8e9aaf;
+  border: 1px double black;
+  border-radius:10%;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin:10px auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .secret-text {
+    width: 80%;
+  }
+  textarea{
+    height: 400px;
+    width: 60%;
+    max-width:800px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .secret-text {
+    width:100%;
+  }
+  textarea {
+    width:100%;
+  }
 }
