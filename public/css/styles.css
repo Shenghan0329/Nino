@@ -27,12 +27,15 @@ p.secret-text{
   margin:20px auto;
 }
 
-button,.btn-lg{
+button, .btn{
   margin:15px;
+}
+
+.btn-lg, .btn-main{
   color:#ffffff;
   background-color:#ffadad;
 }
-.btn-lg:hover{
+.btn-lg:hover,.btn-main:hover{
   background-color:#f72585;
   color:#fffffc;
 }
