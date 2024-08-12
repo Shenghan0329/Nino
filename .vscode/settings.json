@@ -1,5 +1,7 @@
 {
     "workbench.editorAssociations": {   
         "*.md": "vscode.markdown.preview.editor",
-    }
+    },
+    "appService.defaultWebAppToDeploy": "/subscriptions/775aded7-eac3-4287-b14e-91a109fd446f/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/nino",
+    "appService.deploySubpath": "."
 }
