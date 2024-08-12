@@ -13,6 +13,7 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const nodemailer = require("nodemailer");
 const crypto = require("crypto");
 
+const port = 8080;
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
@@ -378,6 +379,6 @@ app.post("/find",function(req,res){
     
 });
 
-app.listen(3000,function(){
-    console.log("Started on Port 3000");
+app.listen(port,function(){
+    console.log("Started on Port "+port);
 })
